@@ -1,11 +1,9 @@
 # PLEX Export
 
-Luke Lanchester <luke@lukelanchester.com>
+Original by Luke Lanchester <luke@lukelanchester.com>
 http://hybridlogic.co.uk/code/standalone/plex-export/
-
-
-> Please note: Plex Export is no longer under active development. Use at your own risk.
-
+Forked by me, Sakujakira.
+![Twitter Follow](https://img.shields.io/twitter/follow/sakujakira?style=for-the-badge)
 
 ## Summary
 
@@ -35,7 +33,7 @@ Plex Export allows you to produce an HTML page with information on the media con
 * Delete cli.php if you upload PLEX Export to any public location
 * If your Plex Server is running in Home mode, we need to authenticate via a token
 * To get a valid token for your system, look here: https://support.plex.tv/hc/en-us/articles/204059436-Finding-your-account-token-X-Plex-Token
-* Then when running cli.php, add a parameter like: -token=<Your Token>
+* Then when running cli.php, add a parameter like: `-token=<Your Token>`
 
 
 ## Features
@@ -44,3 +42,17 @@ Plex Export allows you to produce an HTML page with information on the media con
 * Sort by name, year, rating etc
 * Pull in favourites from Plex
 * More detailed TV Show popup (seasons, episodes etc)
+
+## Issues
+
+* More detailed TV Show popup does not work
+* Genre Export does not work
+* Filtering by Genre does not work
+* it seems to me option `-token=<Your Token>` 
+* surely more...
+
+## Resolved Issues
+
+* Updated JQuery from 1.4 to 3.5
+* partially migration work done
+* resolved "Error: Could not load thumbnail ..."

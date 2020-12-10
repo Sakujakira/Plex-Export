@@ -474,7 +474,7 @@ var PLEX = {
 			});
 			popup_content += '</ul></td><td id="popup_seasons_episodes"></td><td id="popup_seasons_episode"></td></tr></table></div>';
 
-			$("#popup_seasons_seasons li").live("click", function(){
+			$("#popup_seasons_seasons li").on("click", function(){
 				$("#popup_seasons_seasons li").removeClass("current");
 				$(this).addClass("current");
 				var season_key = $(this).attr("data-season");
@@ -488,7 +488,7 @@ var PLEX = {
 				$("#popup_seasons_episodes").html(html);
 			});
 
-			$("#popup_seasons_episodes li").live("click", function(){
+			$("#popup_seasons_episodes li").on("click", function(){
 				$("#popup_seasons_episodes li").removeClass("current");
 				$(this).addClass("current");
 				var season_key = $(this).attr("data-season");
@@ -558,40 +558,40 @@ var PLEX = {
 			PLEX.change_sort($(this).attr('data-sort'));
 		});
 
-		$("li", PLEX._genre_list).live("click", function(){
+		$("li", PLEX._genre_list).on("click", function(){
 			PLEX.change_genre($(this).attr('data-genre'));
 		});
 
-		$("li", PLEX._director_list).live("click", function(){
+		$("li", PLEX._director_list).on("click", function(){
 			PLEX.change_director($(this).attr('data-director'));
 		});
 		
-		$("li", PLEX._seen_list).live("click", function(){
+		$("li", PLEX._seen_list).on("click", function(){
 			PLEX.change_seen($(this).attr('data-seen'));
 		});
 
-		$("#genre_show_all").live("click", function(){
+		$("#genre_show_all").on("click", function(){
 			PLEX.show_all_genres = true;
 			$(".genre_hidden").show();
 			$("#genre_show_all").hide();
 			$("#genre_hide_all").show();
 		});
 
-		$("#genre_hide_all").live("click", function(){
+		$("#genre_hide_all").on("click", function(){
 			PLEX.show_all_genres = false;
 			$(".genre_hidden").hide();
 			$("#genre_hide_all").hide();
 			$("#genre_show_all").show();
 		});
 
-		$("#director_show_all").live("click", function(){
+		$("#director_show_all").on("click", function(){
 			PLEX.show_all_directors = true;
 			$(".director_hidden").show();
 			$("#director_show_all").hide();
 			$("#director_hide_all").show();
 		});
 
-		$("#director_hide_all").live("click", function(){
+		$("#director_hide_all").on("click", function(){
 			PLEX.show_all_directors = false;
 			$(".director_hidden").hide();
 			$("#director_hide_all").hide();
@@ -602,11 +602,11 @@ var PLEX = {
 			PLEX.display_section(PLEX.current_section.key);
 		});
 
-		$("li", PLEX._item_list).live("click", function(){
+		$("li", PLEX._item_list).on("click", function(){
 			PLEX.display_item($(this).attr("data-item"));
 		});
 
-		$("#popup-footer span").live("click", function(){
+		$("#popup-footer span").on("click", function(){
 			PLEX.display_item($(this).attr("data-item"));
 		});
 
@@ -637,7 +637,7 @@ var PLEX = {
 			}
 		});
 
-		$(".popup-close").live("click", function(){
+		$(".popup-close").on("click", function(){
 			PLEX.hide_item();
 		});
 

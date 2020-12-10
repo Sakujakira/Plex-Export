@@ -579,7 +579,12 @@ function generate_item_thumbnail($thumb_url, $key, $title) {
 	}
 
 	$source_url = $options['plex-url'].substr($thumb_url,1); # e.g. http://local:32400/library/metadata/123/thumb?=date
-	$transcode_url = $options['plex-url'].'photo/:/transcode?width='.$options['thumbnail-width'].'&height='.$options['thumbnail-height'].'&url='.urlencode($source_url);
+	if($options['token']=='') {
+		$transcode_url = $options['plex-url'].'photo/:/transcode?width='.$options['thumbnail-width'].'&height='.$options['thumbnail-height'].'&url='.urlencode($source_url);
+	} else {
+		$transcode_url = $options['plex-url'].'photo/:/transcode?width='.$options['thumbnail-width'].'&height='.$options['thumbnail-height'].'&url='.urlencode($source_url).'?X-Plex-Token='.$options['token'];
+	}
+	
 
 	$img_data = @file_get_contents($transcode_url, false, $context);
 	if(!$img_data) {
